@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block stylessheets %}
+
+{% endblock %}
+{% block body %}
+    <h1>Examen Recu</h1>
+    <div class="col-lg-4 box-form">
+        <h2>Register, please</h2>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" class="btn btn-success" value="Buscar">
+
+        {{ form_errors(form) }}
+        {{ form_end(form) }}
+    </div>
+    </div>
+{% endblock %}

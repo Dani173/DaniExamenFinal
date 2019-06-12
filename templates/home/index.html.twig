@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block stylessheets %}
+
+{% endblock %}
+{% block body %}
+    <h1>Examen Recu</h1>
+    <div>
+    <a href="{{ path('home_search')}}">Buscador</a>
+        <form action="{{ path('buscador') }}">
+            <input type="text" placeholder="Pon id_paquete">
+            <input type="submit" value="Buscar">
+        </form>
+    {% for pack in packs %}
+
+
+            <h1>{{ pack.name}}</h1><a href="{{ path('home_show',{'id':pack.id} )}}">Mostrar Transportista</a>
+
+        </div>
+
+    {% endfor %}
+    </div>
+{% endblock %}
