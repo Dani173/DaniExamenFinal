@@ -53,6 +53,7 @@ class HomeController extends AbstractController
         $pack = new Pack();
         $form = $this->createForm(PackType::class,$pack);
         $form->handleRequest($request);
+
         if ($form->isSubmitted() && $form->isValid()) {
            $pack1=$pack->getEmployeeId();
             $employee= $this->getDoctrine()->getRepository(Employee::class)->findBy(
