@@ -6,7 +6,10 @@
     <h1>Examen Recu</h1>
     <div>
     <a href="{{ path('home_search')}}">Buscador</a>
-
+        <form  method="post" action="{{ path('busc')}}">
+            <input type="text" placeholder="Pon id_paquete">
+            <input type="submit" value="Buscar">
+        </form>
     {% for pack in packs %}
 
 

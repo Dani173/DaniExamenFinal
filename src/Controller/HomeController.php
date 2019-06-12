@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\PackType;
+use App\Repository\PackRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Pack;
@@ -71,8 +72,16 @@ class HomeController extends AbstractController
             'pack'=>$pack
         ]);
     }
+    /**
+     * @Route("/busc", methods={"POST"}, name="busc")
+     */
+    public function search(Request $request, PackRepository $packs)
+    {
+        $packs->findAll();
 
-
-
+        return $this->render('home/resultado.html.twig', [
+            'employee'=>$packs
+        ]);
+    }
 
 }
